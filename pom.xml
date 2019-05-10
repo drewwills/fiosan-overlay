@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jasig.fiosan</groupId>
+    <artifactId>fiosan-overlay</artifactId>
+    <version>0.9.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>fiosan-overlay</name>
+    <url>https://github.com/uoe-is-apps</url>
+
+    <properties>
+        <fiosan.version>0.9.0-SNAPSHOT</fiosan.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jasig.fiosan</groupId>
+            <artifactId>notification-ui</artifactId>
+            <type>war</type>
+            <version>${fiosan.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>ROOT</warName>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
