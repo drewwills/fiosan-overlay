@@ -31,6 +31,16 @@
                 <configuration>
                     <warName>ROOT</warName>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <archive>
+                        <compress>false</compress>
+                        <manifest>
+                            <mainClass>org.springframework.boot.loader.WarLauncher</mainClass>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Start-Class>uk.ac.ed.notify.Application</Start-Class>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
