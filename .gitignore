@@ -1,3 +1,9 @@
 /notification-ui.iml
 /target/
 /.idea/
+
+# Extra Intellij ignores
+.idea
+*.iml
+*.ipr
+modules.xml
