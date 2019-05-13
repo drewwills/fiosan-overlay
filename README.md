@@ -25,6 +25,43 @@ directory of your Tomcat installation.
 
 ## Configuration
 
+As it's name implies, you can configure Fiosan using `fiosan-overlay` by _overlaying_ source files.
+You can obtain source files by visiting the [notification-ui repository][].  Copy the file(s) you
+wish to cusomize from the `src/mail/resources` directory in `notification-ui` and place them in the
+same location within `fiosan-overlay`.
+
+Once you have the necessary files in `fiosan-overlay`, you can make your changes and build the
+project (_e.g._ with `$ mvn clean package`).
+
+Files to Customize
+
+The following illustration shows the files within `notification-ui` you are most likely to want to
+customize and their locations.
+
+```
+  - src/
+    - main/
+      - resources/
+        - static/
+          - index.html
+        - application.properties
+        - quartz.properties
+```
+
+### `index.html`
+
+Customize this file to add your logo and CSS.
+
+### `application.properties`
+
+Most application settings can be controlled here, including database connection & initialization
+settings, server hostname, logging configuration, and where and how to access `notification-ms`.
+
+### `quartz.properties`
+
+Choose a `org.quartz.jobStore.driverDelegateClass` setting that is appropriate for your RDBMS
+platform (Oracle or MS SQL Server).
+
 
 [Apache Tomcat]: http://tomcat.apache.org/
-
+[notification-ui repository]: https://github.com/uoe-is-apps/notification-ui
