@@ -1,12 +1,21 @@
 # fiosan-overlay
 
-Repository for implementation choices of adopters of Apereo Fiosan (formerly the Notification
-Backbone).
+Repository for the implementation choices made by adopters of Apereo Fiosan (formerly the
+Notification Backbone).
 
 ## Installation
 
 This project builds a self-executing `war` archive;  you may choose either to (1) run it
 independently, or (2) deploy it in a standard Java Servlet Container (such as [Apache Tomcat][]).
+
+### Building Fiosan
+
+The build system for this project is based on [Apache Maven][].  Use the following Maven command to
+build Fiosan together with your configuration settings.
+
+```console
+$ mvn [clean] package
+```
 
 ### Running Fiosan Independently
 
@@ -33,7 +42,7 @@ same location within `fiosan-overlay`.
 Once you have the necessary files in `fiosan-overlay`, you can make your changes and build the
 project (_e.g._ with `$ mvn clean package`).
 
-Files to Customize
+### Files to Customize
 
 The following illustration shows the files within `notification-ui` you are most likely to want to
 customize and their locations.
@@ -48,20 +57,21 @@ customize and their locations.
         - quartz.properties
 ```
 
-### `index.html`
+#### `index.html`
 
 Customize this file to add your logo and CSS.
 
-### `application.properties`
+#### `application.properties`
 
 Most application settings can be controlled here, including database connection & initialization
 settings, server hostname, logging configuration, and where and how to access `notification-ms`.
 
-### `quartz.properties`
+#### `quartz.properties`
 
 Choose a `org.quartz.jobStore.driverDelegateClass` setting that is appropriate for your RDBMS
 platform (Oracle or MS SQL Server).
 
 
 [Apache Tomcat]: http://tomcat.apache.org/
+[Apache Maven]: https://maven.apache.org/
 [notification-ui repository]: https://github.com/uoe-is-apps/notification-ui
